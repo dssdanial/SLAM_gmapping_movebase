@@ -1,4 +1,4 @@
-Research Track 1 third (final) assignment
+# RT1 final project
 ================================
 
 A software architecture for the control of the robot in the environment. The software relys on the move_base and gmapping packages for localizing the robot and plan the motion.
@@ -10,7 +10,7 @@ In this project, the software architecture should be able to get the user reques
       3-  let the user drive the robot assisting them to avoid collisions
 
 
-* The Robot in the environment and the main menu
+* The Robot can be obsereved in both Rviz and Gazebo environments as follows:
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_01.png" width="500" height="300">
 </p>
@@ -18,33 +18,116 @@ In this project, the software architecture should be able to get the user reques
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_02_rviz.png" width="500" height="300">
 </p>
-Installing and running
+
+This represents the point of view from Rviz. Rviz is a 3D visualization tool for ROS applications. It offers a view of the robot model, acquires sensor information from the robot sensors, and reproduces the acquired data. It can display data from video cameras, lasers, 3D and 2D devices, including images and point clouds. To obtain this result the robot must have explored all the surroundings since with the gmapping algorithm we do not have a totale knowledge of the environment, whereas with a pre-existing map we do.
+
+
+## How to Instal and run
 ----------------------
+At first, some packages are required to be installed, if they aren't already installed,it is possible to setup them by the following commands.
 
-To correctly run this project is necessary to have some elements intalled, in particular you need:
+* Install xterm:
+``` bash
+$ sudo apt install xterm
+```
+* Using the SLAM-Gmapping package:
+``` bash
+$ git clone https://github.com/CarmineD8/slam_gmapping.git
+```
+* using the Navigation package:
+``` bash
+$ sudo apt-get install ros-<your_ros_distro>-navigation
+```
+* Install teleop-twist-keyboard package:
+``` bash
+$ sudo apt-get install ros-hydro-teleop-twist-keyboard
+```
 
-* ROS navigation stack
-  - ``` bash
-    $ sudo apt-get install ros-melodic-navigation
-    ```
-* Slam gmapping package
-  - ``` bash
-    $ git clone https://github.com/CarmineD8/slam_gmapping.git
-    ```
-* xterm
-  - ``` bash
-    $ sudo apt-get install xterm
-    ```
-    
 After doing this download the package and then you are ready to run the simulation, a launch file is porvided,
 so you can simply start the simulation with:
 ``` bash
 $ roslaunch RTassignment3 main.launch
 ```
+
+
+# Nodes description
+## Rviz node
+When launching Rviz, three nodes are actually executed:
+
+* joint_state_publisher: the package reads the robot_description parameter from the parameter server, finds all of the non-fixed joints and publishes a JointState message with all those joints defined. If GUI is present, the package displays the joint positions in a window as sliders.
+
+* robot_state_publisher: the package uses the URDF specified by the parameter robot_description and the joint positions from the topic joint_states to calculate the forward kinematics of the robot and publish the results via tf.
+
+* rviz
+
+
+## Slam_gmapping node
+This ROS node is contained in the `gmapping` package and provides laser-based SLAM (Simultaneous Localization and Mapping). Using `slam_gmapping`, you can create a 2-D occupancy grid map from laser and pose data collected by a mobile robot. To use `slam_gmapping`, you need a mobile robot that provides odometry data and is equipped with a horizontally-mounted, fixed, laser range-finder. The `slam_gmapping` node will attempt to transform each incoming scan into the `odom` (odometry) `tf` frame. The `slam_gmapping` node takes in `sensor_msgs/LaserScan` messages and builds a map (`nav_msgs/OccupancyGrid`). The map can be retrieved via a ROS topic or service.
+
+## Move_base node
+The move_base package provides an implementation of an action that, given a goal in the world, will attempt to reach it with a mobile base. Actions are services which are not executed atomically, and thus may also offer some additional tools, such as a continuous feedback and the possibility of cancel the request. For the purpose of this project the publish/subscribe architecture will be used for using actions, by sending a message on the topic `move_base/goal`.
+
+
+
+
+``` bash
+Reading from the keyboard and Publishing to Twist!
+  ---------------------------
+  Moving around:
+     u    i    o
+     j    k    l
+     m    ,    .
+  For Holonomic mode (strafing), hold down the shift key:
+  ---------------------------
+     U    I    O
+     J    K    L
+     M    <    >
+  t : up (+z)
+  b : down (-z)
+  anything else : stop
+  q/z : increase/decrease max speeds by 10%
+  w/x : increase/decrease only linear speed by 10%
+  e/c : increase/decrease only angular speed by 10%
+  CTRL-C to quit
+```
+
+
+The commands for moving the robot are as follows:
+
+u to turn left
+
+i to go straight ahead
+
+o to turn right
+
+j to turn counterclockwise
+
+k to stop
+
+l to turn clockwise
+
+m to turn left going backwards
+
+, to go straight back
+
+. to turn right going backwards
+
+The other commands described in the message can be used to change the speed of the robot.
+
+
+
+
+
+
+
 Introduction
 ----------------------
 Once you have launched the simulation you will see an interface in which you can choose the modality to run the robot.
 To meet all the requests I have decided to implement four nodes, one for the user interface, and three for the different driving modalities.
+
+
+
+
 
 
 interface
