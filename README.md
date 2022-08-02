@@ -15,7 +15,9 @@ In this project, the software architecture should be able to get the user reques
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_01.png" width="500" height="300">
 </p>
 
-
+<p align="center">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_02_rviz.png" width="500" height="300">
+</p>
 Installing and running
 ----------------------
 
