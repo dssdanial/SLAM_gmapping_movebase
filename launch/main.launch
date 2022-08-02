@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find RTassignment3)/launch/simulation_gmapping.launch"/>
+    <include file="$(find RTassignment3)/launch/move_base.launch"/>
+    <node pkg="RTassignment3" type="interface" name="interface" output="screen" required="true" launch-prefix="xterm -fa 'Monospace' -fs 11 -e"/>
+</launch>
