@@ -12,7 +12,7 @@ In this project, the software architecture should be able to get the user reques
 
 * The Robot in the environment and the main menu
 <p align="center">
-<img src="https://github.com/dssdanial/RTassignment3/blob/melodic/images/maze-menu.jpg" width="500" height="300">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_01.png" width="500" height="300">
 </p>
 
 
