@@ -67,24 +67,11 @@ the correct command to launch a node thanks to the `system()` function.
 
 Here you can find a list of the commands:
 
-<center>
-
-| Command | Result |
-|:--------:|:----------:|
-|__1__   |__Run the node to autonomousely reach a given position__|
-|__2__   |__Run the node to drive the robot with the keyboard__|
-|__3__   |__Run the node to drive the robot with the keyboard with obstacles avoidance__|
-|__4__   |__Reset the simulation__|
-|__0__   |__Quit the execution of the program__|
-
-</center>
-
-
 <p align="center">
-<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_01.png" width="500" height="300">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/interface.png" width="500" height="300">
 </p>
 
-ReachPosition
+Autonomous XY-Position Node
 ----------------------
 This node aims to, once a position has been given, drive the robot in the correct position in the environment.
 First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated
