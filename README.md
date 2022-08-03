@@ -151,22 +151,34 @@ https://user-images.githubusercontent.com/32397445/182617913-dd8b501b-b90d-4474-
 
 
 
-Flowcharts
+Pseudo code
 ----------------------
-Here you can find three flowchart for the three driving modalities, the first one is the one regards the ReachPosition node, the second regards the KeyboardDrive node,
-the last one regards the KeyboardDriveObs node. 
-<p align="center">
-<img src="https://github.com/andreamanera/RTassignment3/blob/noetic/images/flowcharts.jpg" width="700" height="500">
-</p>
+ ## control of the robot
+ ``` bash
+ listen for UI node's commands
 
-Thanks to the command `rosrun rqt_graph` here you can see a graph of the nodes and their interactions.
-<p align="center">
-<img src="https://github.com/andreamanera/RTassignment3/blob/noetic/images/rqt_graph.png" width="700" height="500">
-</p>
+  if autonomous drive
+    receive coordinates
+    start driving action with coordinates
+
+  elseif manual drive
+    redirect teleop_twist_keyboard node to cmd_vel topic
+
+  elseif assisted drive
+    run collision avoidance on teleop_twist_keyboard's commands
+    send filtered commands to cmd_vel
+
+  send info to Interface node
+```
+
 
 Coclusion and possible improvments
 ----------------------
 
-I'm pretty satisied with the final result, even if the tasks for this assignment were challenging, all three driving modalities work correctly.
-regarding the improvments I have observed that in the ReachPosition modality the feedback to check if the robot has reached the goal takes a lot of time
-to be detected by the `base_scan/status` topic, so maybe it could be a good idea to manage the feedback in another way.
+All proposed algorithms are executed correctly and the robot completed the task as well. Results are satisfying, however, some improvements can be achieved.
+* reaching a desired point seems taking some delays, so, this could be modified by tuning parameters. 
+* A queue could be implemented where goals are reached sequentially.
+* When the map of the environment is completed, the robot is not able to understand the priori points whether it is reachable or not, which could be improved in further developments.
+
+
+
