@@ -18,12 +18,18 @@ std_srvs::Empty reset; ///< Global variable to reset the simulation
 
 std::string menu = R"(
         
-______________ Choose the simulation mode___________:
-1 : Go to desire x-y position
-2 : keyboard-manually drive
-3 : keyboard-manually drive with obstacles avoidance
-4 : Reset
-0 : Exit
+______________ Choose the simulation mode____________
+_____________________________________________________|
+|1  |        Go to desire x-y position               |
+|___|________________________________________________|
+|2  |         keyboard-manually drive                |
+|___|________________________________________________|
+|3  |keyboard-manually drive with obstacles avoidance|
+|___|________________________________________________|
+|4  |                Reset                           |
+|___|________________________________________________|
+|0  |                Exit                            |
+|___|________________________________________________|
 )"; ///< Global variable to print the menu
 
 
@@ -76,7 +82,7 @@ int main(int argc, char **argv)
         {
 		case '1':
 		    //launch x-y position node
-		    system("rosrun RTassignment3 x-y position");
+		    system("rosrun RTassignment3 xy_position");
 		break;
 		
 		case '2':

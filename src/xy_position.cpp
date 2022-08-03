@@ -261,7 +261,7 @@ int main(int argc, char **argv)
 {
     srand(time(NULL));
 
-    ros::init(argc, argv, "ReachPosition");
+    ros::init(argc, argv, "xy_position");
     ros::NodeHandle node_handle;
 
     // the goal position is published in the "/move_base/goal" topic
