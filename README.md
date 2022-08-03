@@ -85,48 +85,27 @@ To know if the robot has reached the goal a `/move_base/status` message handler 
 In particular, when the robot stops, the status code becomes `3` if the robot has reached the goal position, otherwise the status code becomes `4` if the robot can not
 reach the given position.
 
-KeyboardDrive
-----------------------
- 
-**NOTE:** for the remaining two nodes I have decided to implement a function to have non-blocking keyboard input, it is part of [teleop_twist_keyboard.cpp](http://docs.ros.org/en/kinetic/api/teleop_twist_keyboard_cpp/html/teleop__twist__keyboard_8cpp_source.html).
 
+
+Manual Drive- _without_ Obstacle Avoidance assistant
+----------------------
 This node aims to give the user the possibility of moving the robot in the environment using the keyboard. To opportunetly manage robot movement in the
 environment I have decided to implement four variables, two used for the velocity values (one for the linear velocity and one for the angular) and two used for the direction
-(again onefor the linear velocity and one for the angular). 
 
 As requested the user can move the robot using the keyboard, each specific key modify the above mentioned variables to drive the robot in the maze.
 Once the velocity and the direction has been modified new velocities are published in the `/cmd_vel` topic. 
 
 Below you can find a list of the command to move the robot and increase/decrease velocities:
 
-* Use these commands as you are using a joystick to change the robot direction:
 
-<center>
+<p align="center">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/keyboard.png" width="500" height="300">
+</p>
 
-| __y__  |__u__  |__i__  |
-|:--------:|:--------:|:--------:|
-|__h__   |__j__ |__k__   |
-|__b__   |__n__ |__m__   |
+# Video
 
 
-</center>
-
-
-* Here commands to increase/decrease linear and angular velocity:
-
-| Command | Result |
-|:--------:|:----------:|
-|__a__   |__to increase both linear and angular velocity by 10%__|
-|__d__   |__to decrease both linear and angular velocity by 10%__|
-|__r__   |__to reset both linear and angular velocities to their default values__|
-|__w__   |__to increase only linear velocity by 10%__|
-|__s__   |__to decrease only linear velocity by 10%__|
-|__q__   |__to increase only angular velocity by 10 %__|
-|__c__   |__to decrease only angular velocity by 10 %__|
-
-</center>
-
-KeyboardDriveObs
+Manual Drive- _with_ Obstacle Avoidance assistant
 ----------------------
 This is the last node developed, basically it aims to give the user the possibility to drive the robot in the environment using the keyboard, but in this
 case we want also to provide automatic obstacle avoidance. Since the goal is partillay similar to what was done with the `KeyboardDrive` node, part of the code
@@ -136,7 +115,10 @@ composed of 720 elements. The ranges array is filled with the distance of the ob
 divide the array in three parts (robot's left right and front) and check the closest obstacle in each section, then if the robot will be close to an obstacle it will be
 properly rotated. 
 
-**NOTE:** this last mentioned part of the code is similar to what done in the [second assignment](https://github.com/andreamanera/RTassignment2)
+
+
+# video
+
 
 Flowcharts
 ----------------------
