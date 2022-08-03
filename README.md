@@ -43,8 +43,7 @@ $ sudo apt-get install ros-<your_ros_distro>-navigation
 $ sudo apt-get install ros-hydro-teleop-twist-keyboard
 ```
 
-After doing this download the package and then you are ready to run the simulation, a launch file is porvided,
-so you can simply start the simulation with:
+After installing the required packages, it is time to run the simulation. Concequently, a launch file is porvided here as follows.
 ``` bash
 $ roslaunch RTassignment3 main.launch
 ```
@@ -61,51 +60,46 @@ Introduction
 
 Interface Node
 ----------------------
-This is the first node that I have developed, it has the purpose of showing an interface in which the user can 
-choose the modality, reset the simulation or quit the execution of the program. When an input is given the node run
-the correct command to launch a node thanks to the `system()` function. 
+The purpose of this node is showing an interface in which the user can choose different modes, reset the simulation or quit the execution of the program. When an input is given, the node runs the correct command to launch the related node. 
 
-Here you can find a list of the commands:
+The interface is simply designed as a list of commands as follows:
 
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/interface.png" width="500" height="300">
 </p>
 
+
 (I) Autonomous XY-Position Node
 ----------------------
-This node aims to, once a position has been given, drive the robot in the correct position in the environment.
-First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated
-and published in the `/move_base/goal` topic.
+Once a x-y position receieved by user, this node drives the robot to the desired position in the environment. First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated and published in the `/move_base/goal` topic.
 Every goal is tracked by the node with its `id`, that is randomly generated inside the node itself.
 
-after establishing the position to be reached the user can at any time cancel the goal (pressing the `q` key) and quit the execurtion (pressing the `s` key).
-If one of the above keys is pressed, a message of type `actionlib_msgs/GoalID` is generated and then published in the `/move_base/cancel` topic to cancel the goal.
-
-To know if the robot has reached the goal a `/move_base/status` message handler is implemented. It checks the meassages published on the previously mentioned topic.
-In particular, when the robot stops, the status code becomes `3` if the robot has reached the goal position, otherwise the status code becomes `4` if the robot can not
-reach the given position.
 
 ## Nodes struscture
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode01.jpg" width="600" height="500">
 </p>
 
+After establishing the position, the user can at any time cancel the goal (pressing the `q` key) and quit the execurtion (pressing the `s` key).
+If one of the above keys is pressed, a message of type `actionlib_msgs/GoalID` is generated and then published in the `/move_base/cancel` topic to cancel the goal.
+
+
 ## video
-The result of the first task is shown as the following video:
+The result of the **_first_** task is shown as the following video:
 
 https://user-images.githubusercontent.com/32397445/182617068-742112e0-2abb-4133-b68c-c55e71dd4b9f.mp4
 
+In order to check wheather the robot has reached the goal or not, a `/move_base/status` message handler is implemented. It checks the meassages published on the previously mentioned topic. In particular, when the robot stops, the status code becomes `3` if the robot has reached the goal position, otherwise the status code becomes `4` if the robot can not
+reach the given position.
 
 
 (II) Manual Drive- _without_ Obstacle Avoidance assistant
 ----------------------
-This node aims to give the user the possibility of moving the robot in the environment using the keyboard. To opportunetly manage robot movement in the
-environment I have decided to implement four variables, two used for the velocity values (one for the linear velocity and one for the angular) and two used for the direction
+This node aims to give the user the possibility of moving the robot in the environment using the keyboard. In order to manage the robot's movement in the
+environment four parameters are considred, two used for the velocity values (both linear and angular velocity) and two used for the directions.
+Each specific key modifies the above mentioned variables to drive the robot through the maze. Once the velocity and the direction has been modified new velocities are published in the `/cmd_vel` topic. 
 
-As requested the user can move the robot using the keyboard, each specific key modify the above mentioned variables to drive the robot in the maze.
-Once the velocity and the direction has been modified new velocities are published in the `/cmd_vel` topic. 
-
-Below you can find a list of the command to move the robot and increase/decrease velocities:
+An interface has been considered as a list of the commands to move the robot and increase/decrease velocities as follows:
 
 
 <p align="center">
@@ -119,7 +113,7 @@ Below you can find a list of the command to move the robot and increase/decrease
 </p>
 
 ## Video
-The result of the first task is shown as the following video:
+The result of the **_second_** task is shown as the following video:
 
 
 https://user-images.githubusercontent.com/32397445/182617882-0e5dd0a1-4319-4f45-95e8-0d2c0bbfb350.mp4
@@ -129,12 +123,9 @@ https://user-images.githubusercontent.com/32397445/182617882-0e5dd0a1-4319-4f45-
 (III) Manual Drive- _with_ Obstacle Avoidance assistant
 ----------------------
 This is the last node developed, basically it aims to give the user the possibility to drive the robot in the environment using the keyboard, but in this
-case we want also to provide automatic obstacle avoidance. Since the goal is partillay similar to what was done with the `KeyboardDrive` node, part of the code
+case it is also necessary to provide obstacle avoidance autonomously. Since the goal is partially similar to what was done with the previous node, part of the code
 has been re-used for this node. 
-To manage obstacle avoidance we have to check what the robot laser scanner see, to do so the node subscribes to the `/scan` topic. This topic provide a `ranges array`
-composed of 720 elements. The ranges array is filled with the distance of the obstacles in the `180°` field of view of the robot. Thanks to two functions it is possible to
-divide the array in three parts (robot's left right and front) and check the closest obstacle in each section, then if the robot will be close to an obstacle it will be
-properly rotated. 
+To manage obstacle avoidance the robot laser scanner is used,and the node subscribes from the `/scan` topic. This topic provide a `ranges array` composed of 720 elements. The ranges array is filled with the distance of the obstacles in the `180°` field of view of the robot. It is possible to divide the array in three parts (robot's left right and front) and check the closest obstacle in each section, then if the robot will be close to an obstacle it will be properly rotated. 
 
 
 ## Nodes struscture
@@ -144,7 +135,7 @@ properly rotated.
 </p>
 
 ## Video
-The result of the first task is shown as the following video:
+The result of the **_third_** task is shown as the following video:
 
 
 https://user-images.githubusercontent.com/32397445/182617913-dd8b501b-b90d-4474-8985-fd134b660af3.mp4
@@ -175,7 +166,7 @@ Pseudo code
 Coclusion and possible improvments
 ----------------------
 
-All proposed algorithms are executed correctly and the robot completed the task as well. Results are satisfying, however, some improvements can be achieved.
+All proposed algorithms are executed correctly and the robot completed tasks as well. Results are satisfying, however, some improvements can be achieved.
 * reaching a desired point seems taking some delays, so, this could be modified by tuning parameters. 
 * A queue could be implemented where goals are reached sequentially.
 * When the map of the environment is completed, the robot is not able to understand the priori points whether it is reachable or not, which could be improved in further developments.
