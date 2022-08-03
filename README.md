@@ -85,6 +85,10 @@ To know if the robot has reached the goal a `/move_base/status` message handler 
 In particular, when the robot stops, the status code becomes `3` if the robot has reached the goal position, otherwise the status code becomes `4` if the robot can not
 reach the given position.
 
+# video
+
+https://user-images.githubusercontent.com/32397445/182617068-742112e0-2abb-4133-b68c-c55e71dd4b9f.mp4
+
 
 
 Manual Drive- _without_ Obstacle Avoidance assistant
@@ -105,6 +109,10 @@ Below you can find a list of the command to move the robot and increase/decrease
 # Video
 
 
+https://user-images.githubusercontent.com/32397445/182617882-0e5dd0a1-4319-4f45-95e8-0d2c0bbfb350.mp4
+
+
+
 Manual Drive- _with_ Obstacle Avoidance assistant
 ----------------------
 This is the last node developed, basically it aims to give the user the possibility to drive the robot in the environment using the keyboard, but in this
@@ -118,6 +126,10 @@ properly rotated.
 
 
 # video
+
+
+https://user-images.githubusercontent.com/32397445/182617913-dd8b501b-b90d-4474-8985-fd134b660af3.mp4
+
 
 
 Flowcharts
