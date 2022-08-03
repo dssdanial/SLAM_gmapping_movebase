@@ -71,7 +71,7 @@ Here you can find a list of the commands:
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/interface.png" width="500" height="300">
 </p>
 
-Autonomous XY-Position Node
+(I) Autonomous XY-Position Node
 ----------------------
 This node aims to, once a position has been given, drive the robot in the correct position in the environment.
 First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated
@@ -85,13 +85,19 @@ To know if the robot has reached the goal a `/move_base/status` message handler 
 In particular, when the robot stops, the status code becomes `3` if the robot has reached the goal position, otherwise the status code becomes `4` if the robot can not
 reach the given position.
 
-# video
+## Nodes struscture
+<p align="center">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode01.jpg" width="600" height="500">
+</p>
+
+## video
+The result of the first task is shown as the following video:
 
 https://user-images.githubusercontent.com/32397445/182617068-742112e0-2abb-4133-b68c-c55e71dd4b9f.mp4
 
 
 
-Manual Drive- _without_ Obstacle Avoidance assistant
+(II) Manual Drive- _without_ Obstacle Avoidance assistant
 ----------------------
 This node aims to give the user the possibility of moving the robot in the environment using the keyboard. To opportunetly manage robot movement in the
 environment I have decided to implement four variables, two used for the velocity values (one for the linear velocity and one for the angular) and two used for the direction
@@ -106,14 +112,21 @@ Below you can find a list of the command to move the robot and increase/decrease
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/keyboard.png" width="500" height="300">
 </p>
 
-# Video
+## Nodes struscture
+
+<p align="center">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode02.jpg" width="500" height="300">
+</p>
+
+## Video
+The result of the first task is shown as the following video:
 
 
 https://user-images.githubusercontent.com/32397445/182617882-0e5dd0a1-4319-4f45-95e8-0d2c0bbfb350.mp4
 
 
 
-Manual Drive- _with_ Obstacle Avoidance assistant
+(III) Manual Drive- _with_ Obstacle Avoidance assistant
 ----------------------
 This is the last node developed, basically it aims to give the user the possibility to drive the robot in the environment using the keyboard, but in this
 case we want also to provide automatic obstacle avoidance. Since the goal is partillay similar to what was done with the `KeyboardDrive` node, part of the code
@@ -124,8 +137,14 @@ divide the array in three parts (robot's left right and front) and check the clo
 properly rotated. 
 
 
+## Nodes struscture
 
-# video
+<p align="center">
+<img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode03.jpg" width="500" height="300">
+</p>
+
+## Video
+The result of the first task is shown as the following video:
 
 
 https://user-images.githubusercontent.com/32397445/182617913-dd8b501b-b90d-4474-8985-fd134b660af3.mp4
