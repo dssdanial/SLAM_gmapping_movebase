@@ -40,7 +40,7 @@ $ sudo apt-get install ros-<your_ros_distro>-navigation
 ```
 * Install teleop-twist-keyboard package:
 ``` bash
-$ sudo apt-get install ros-hydro-teleop-twist-keyboard
+$ sudo apt-get install ros-<your_ros_distro>-teleop-twist-keyboard
 ```
 
 After installing the required packages, it is time to run the simulation. Concequently, a launch file is porvided here as follows.
