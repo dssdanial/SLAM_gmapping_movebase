@@ -1,0 +1,8 @@
+<map id="src/xy_position.cpp" name="src/xy_position.cpp">
+<area shape="rect" id="node1" title="Navigation node for driving a robot to a specified goal." alt="" coords="409,5,555,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,87,84,114"/>
+<area shape="rect" id="node3" title=" " alt="" coords="108,80,360,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="385,80,579,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="604,87,784,114"/>
+<area shape="rect" id="node6" title=" " alt="" coords="809,87,873,114"/>
+</map>
