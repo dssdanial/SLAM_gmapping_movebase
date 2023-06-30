@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>RT1<sp/>final<sp/>project:<sp/>SLAM_gmapping_movebase</highlight></codeline>
+<codeline><highlight class="normal">================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>software<sp/>architecture<sp/>for<sp/>the<sp/>control<sp/>of<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>environment.<sp/>The<sp/>software<sp/>relys<sp/>on<sp/>the<sp/>move_base<sp/>and<sp/>gmapping<sp/>packages<sp/>for<sp/>localizing<sp/>the<sp/>robot<sp/>and<sp/>plan<sp/>the<sp/>motion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>project,<sp/>the<sp/>software<sp/>architecture<sp/>should<sp/>be<sp/>able<sp/>to<sp/>get<sp/>the<sp/>user<sp/>request,<sp/>and<sp/>let<sp/>the<sp/>robot<sp/>execute<sp/>one<sp/>of<sp/>the<sp/>following<sp/>behaviors<sp/>(depending<sp/>on<sp/>the<sp/>user’s<sp/>input):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>1-<sp/><sp/>autonomously<sp/>reach<sp/>a<sp/>x,y<sp/>coordinate<sp/>inserted<sp/>by<sp/>the<sp/>user</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>2-<sp/><sp/>let<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>with<sp/>the<sp/>keyboard</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>3-<sp/><sp/>let<sp/>the<sp/>user<sp/>drive<sp/>the<sp/>robot<sp/>assisting<sp/>them<sp/>to<sp/>avoid<sp/>collisions</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>The<sp/>Robot<sp/>can<sp/>be<sp/>obsereved<sp/>in<sp/>both<sp/>Rviz<sp/>and<sp/>Gazebo<sp/>environments<sp/>as<sp/>follows.</highlight></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_01.png&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/map_02_rviz.png&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>represents<sp/>the<sp/>point<sp/>of<sp/>view<sp/>from<sp/>Rviz.<sp/>Rviz<sp/>is<sp/>a<sp/>3D<sp/>visualization<sp/>tool<sp/>for<sp/>ROS<sp/>applications.<sp/>It<sp/>offers<sp/>a<sp/>view<sp/>of<sp/>the<sp/>robot<sp/>model,<sp/>acquires<sp/>sensor<sp/>information<sp/>from<sp/>the<sp/>robot<sp/>sensors,<sp/>and<sp/>reproduces<sp/>the<sp/>acquired<sp/>data.<sp/>It<sp/>can<sp/>display<sp/>data<sp/>from<sp/>video<sp/>cameras,<sp/>lasers,<sp/>3D<sp/>and<sp/>2D<sp/>devices,<sp/>including<sp/>images<sp/>and<sp/>point<sp/>clouds.<sp/>To<sp/>obtain<sp/>this<sp/>result<sp/>the<sp/>robot<sp/>must<sp/>have<sp/>explored<sp/>all<sp/>the<sp/>surroundings<sp/>since<sp/>with<sp/>the<sp/>gmapping<sp/>algorithm<sp/>we<sp/>do<sp/>not<sp/>have<sp/>a<sp/>totale<sp/>knowledge<sp/>of<sp/>the<sp/>environment,<sp/>whereas<sp/>with<sp/>a<sp/>pre-existing<sp/>map<sp/>we<sp/>do.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>to<sp/>Install<sp/>and<sp/>run</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal">At<sp/>first,<sp/>some<sp/>packages<sp/>are<sp/>required<sp/>to<sp/>be<sp/>installed,<sp/>if<sp/>they<sp/>aren&apos;t<sp/>already<sp/>installed,it<sp/>is<sp/>possible<sp/>to<sp/>setup<sp/>them<sp/>by<sp/>the<sp/>following<sp/>commands.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Install<sp/>xterm:</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt<sp/>install<sp/>xterm</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Using<sp/>the<sp/>SLAM-Gmapping<sp/>package:</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>git<sp/>clone<sp/>https://github.com/CarmineD8/slam_gmapping.git</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>using<sp/>the<sp/>Navigation<sp/>package:</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-&lt;your_ros_distro&gt;-navigation</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Install<sp/>teleop-twist-keyboard<sp/>package:</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>sudo<sp/>apt-get<sp/>install<sp/>ros-&lt;your_ros_distro&gt;-teleop-twist-keyboard</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">After<sp/>installing<sp/>the<sp/>required<sp/>packages,<sp/>it<sp/>is<sp/>time<sp/>to<sp/>run<sp/>the<sp/>simulation.<sp/>Concequently,<sp/>a<sp/>launch<sp/>file<sp/>is<sp/>porvided<sp/>here<sp/>as<sp/>follows.</highlight></codeline>
+<codeline><highlight class="normal">```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>roslaunch<sp/>RTassignment3<sp/>main.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Introduction</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Regarding<sp/>the<sp/>first<sp/>goal,<sp/>the<sp/>`move_base`<sp/>pakage<sp/>requires<sp/>goal<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>the<sp/>topic<sp/>`move_base/goal`,<sp/>by<sp/>sending<sp/>a<sp/>message<sp/>of<sp/>type<sp/>`move_base_msgs/MoveBaseActionGoal`.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Regarding<sp/>the<sp/>goals<sp/>2)<sp/>and<sp/>3),<sp/>it<sp/>should<sp/>rely<sp/>on<sp/>the<sp/>`teleop_twist_keyboard`,<sp/>however,<sp/>in<sp/>case<sp/>3),<sp/>the<sp/>cmd_vel<sp/>may<sp/>need<sp/>to<sp/>be<sp/>corrected<sp/>when<sp/>the<sp/>user<sp/>is<sp/>going<sp/>to<sp/>crash<sp/>into<sp/>obstacles.<sp/>Carefully<sp/>consider<sp/>the<sp/>architecture<sp/>of<sp/>the<sp/>system.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Concerning<sp/>the<sp/>goal<sp/>3),<sp/>the<sp/>robot<sp/>should<sp/>not<sp/>go<sp/>forward<sp/>if<sp/>there<sp/>is<sp/>an<sp/>obstacle<sp/>in<sp/>the<sp/>front,<sp/>also<sp/>should<sp/>not<sp/>turn<sp/>left/right<sp/>if<sp/>there<sp/>are<sp/>obstacles<sp/>on<sp/>the<sp/>left/right.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Interface<sp/>Node</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>purpose<sp/>of<sp/>this<sp/>node<sp/>is<sp/>showing<sp/>an<sp/>interface<sp/>in<sp/>which<sp/>the<sp/>user<sp/>can<sp/>choose<sp/>different<sp/>modes,<sp/>reset<sp/>the<sp/>simulation<sp/>or<sp/>quit<sp/>the<sp/>execution<sp/>of<sp/>the<sp/>program.<sp/>When<sp/>an<sp/>input<sp/>is<sp/>given,<sp/>the<sp/>node<sp/>runs<sp/>the<sp/>correct<sp/>command<sp/>to<sp/>launch<sp/>the<sp/>related<sp/>node.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>interface<sp/>is<sp/>simply<sp/>designed<sp/>as<sp/>a<sp/>list<sp/>of<sp/>commands<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/interface.png&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(I)<sp/>Autonomous<sp/>XY-Position<sp/>Node</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>a<sp/>x-y<sp/>position<sp/>receieved<sp/>by<sp/>user,<sp/>this<sp/>node<sp/>drives<sp/>the<sp/>robot<sp/>to<sp/>the<sp/>desired<sp/>position<sp/>in<sp/>the<sp/>environment.<sp/>First<sp/>of<sp/>all<sp/>the<sp/>node<sp/>requires<sp/>from<sp/>the<sp/>user<sp/>the<sp/>`x`<sp/>and<sp/>`y`<sp/>position<sp/>of<sp/>the<sp/>goal,<sp/>then<sp/>a<sp/>message<sp/>of<sp/>type<sp/>`move_base_msgs/MoveBaseActionGoal`<sp/>is<sp/>generated<sp/>and<sp/>published<sp/>in<sp/>the<sp/>`/move_base/goal`<sp/>topic.</highlight></codeline>
+<codeline><highlight class="normal">Every<sp/>goal<sp/>is<sp/>tracked<sp/>by<sp/>the<sp/>node<sp/>with<sp/>its<sp/>`id`,<sp/>that<sp/>is<sp/>randomly<sp/>generated<sp/>inside<sp/>the<sp/>node<sp/>itself.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Nodes<sp/>struscture</highlight></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode01.jpg&quot;<sp/>width=&quot;600&quot;<sp/>height=&quot;500&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">After<sp/>establishing<sp/>the<sp/>position,<sp/>the<sp/>user<sp/>can<sp/>at<sp/>any<sp/>time<sp/>cancel<sp/>the<sp/>goal<sp/>(pressing<sp/>the<sp/>`q`<sp/>key)<sp/>and<sp/>quit<sp/>the<sp/>execurtion<sp/>(pressing<sp/>the<sp/>`s`<sp/>key).</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>one<sp/>of<sp/>the<sp/>above<sp/>keys<sp/>is<sp/>pressed,<sp/>a<sp/>message<sp/>of<sp/>type<sp/>`actionlib_msgs/GoalID`<sp/>is<sp/>generated<sp/>and<sp/>then<sp/>published<sp/>in<sp/>the<sp/>`/move_base/cancel`<sp/>topic<sp/>to<sp/>cancel<sp/>the<sp/>goal.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>video</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>result<sp/>of<sp/>the<sp/>**_first_**<sp/>task<sp/>is<sp/>shown<sp/>as<sp/>the<sp/>following<sp/>video:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">https://user-images.githubusercontent.com/32397445/182872817-f4ccb08b-4d68-4531-80b7-29de31634bc2.mp4</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>check<sp/>wheather<sp/>the<sp/>robot<sp/>has<sp/>reached<sp/>the<sp/>goal<sp/>or<sp/>not,<sp/>a<sp/>`/move_base/status`<sp/>message<sp/>handler<sp/>is<sp/>implemented.<sp/>It<sp/>checks<sp/>the<sp/>meassages<sp/>published<sp/>on<sp/>the<sp/>previously<sp/>mentioned<sp/>topic.<sp/>In<sp/>particular,<sp/>when<sp/>the<sp/>robot<sp/>stops,<sp/>the<sp/>status<sp/>code<sp/>becomes<sp/>`3`<sp/>if<sp/>the<sp/>robot<sp/>has<sp/>reached<sp/>the<sp/>goal<sp/>position,<sp/>otherwise<sp/>the<sp/>status<sp/>code<sp/>becomes<sp/>`4`<sp/>if<sp/>the<sp/>robot<sp/>can<sp/>not</highlight></codeline>
+<codeline><highlight class="normal">reach<sp/>the<sp/>given<sp/>position.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(II)<sp/>Manual<sp/>Drive-<sp/>_without_<sp/>Obstacle<sp/>Avoidance<sp/>assistant</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>node<sp/>aims<sp/>to<sp/>give<sp/>the<sp/>user<sp/>the<sp/>possibility<sp/>of<sp/>moving<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>environment<sp/>using<sp/>the<sp/>keyboard.<sp/>In<sp/>order<sp/>to<sp/>manage<sp/>the<sp/>robot&apos;s<sp/>movement<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">environment<sp/>four<sp/>parameters<sp/>are<sp/>considred,<sp/>two<sp/>used<sp/>for<sp/>the<sp/>velocity<sp/>values<sp/>(both<sp/>linear<sp/>and<sp/>angular<sp/>velocity)<sp/>and<sp/>two<sp/>used<sp/>for<sp/>the<sp/>directions.</highlight></codeline>
+<codeline><highlight class="normal">Each<sp/>specific<sp/>key<sp/>modifies<sp/>the<sp/>above<sp/>mentioned<sp/>variables<sp/>to<sp/>drive<sp/>the<sp/>robot<sp/>through<sp/>the<sp/>maze.<sp/>Once<sp/>the<sp/>velocity<sp/>and<sp/>the<sp/>direction<sp/>has<sp/>been<sp/>modified<sp/>new<sp/>velocities<sp/>are<sp/>published<sp/>in<sp/>the<sp/>`/cmd_vel`<sp/>topic.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>interface<sp/>has<sp/>been<sp/>considered<sp/>as<sp/>a<sp/>list<sp/>of<sp/>the<sp/>commands<sp/>to<sp/>move<sp/>the<sp/>robot<sp/>and<sp/>increase/decrease<sp/>velocities<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/keyboard.png&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Nodes<sp/>struscture</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode02.jpg&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Video</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>result<sp/>of<sp/>the<sp/>**_second_**<sp/>task<sp/>is<sp/>shown<sp/>as<sp/>the<sp/>following<sp/>video:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">https://user-images.githubusercontent.com/32397445/182872919-e427823f-907b-438d-9582-4881dcccf7d8.mp4</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(III)<sp/>Manual<sp/>Drive-<sp/>_with_<sp/>Obstacle<sp/>Avoidance<sp/>assistant</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>last<sp/>node<sp/>developed,<sp/>basically<sp/>it<sp/>aims<sp/>to<sp/>give<sp/>the<sp/>user<sp/>the<sp/>possibility<sp/>to<sp/>drive<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>environment<sp/>using<sp/>the<sp/>keyboard,<sp/>but<sp/>in<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">case<sp/>it<sp/>is<sp/>also<sp/>necessary<sp/>to<sp/>provide<sp/>obstacle<sp/>avoidance<sp/>autonomously.<sp/>Since<sp/>the<sp/>goal<sp/>is<sp/>partially<sp/>similar<sp/>to<sp/>what<sp/>was<sp/>done<sp/>with<sp/>the<sp/>previous<sp/>node,<sp/>part<sp/>of<sp/>the<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">has<sp/>been<sp/>re-used<sp/>for<sp/>this<sp/>node.<sp/></highlight></codeline>
+<codeline><highlight class="normal">To<sp/>manage<sp/>obstacle<sp/>avoidance<sp/>the<sp/>robot<sp/>laser<sp/>scanner<sp/>is<sp/>used,and<sp/>the<sp/>node<sp/>subscribes<sp/>from<sp/>the<sp/>`/scan`<sp/>topic.<sp/>This<sp/>topic<sp/>provide<sp/>a<sp/>`ranges<sp/>array`<sp/>composed<sp/>of<sp/>720<sp/>elements.<sp/>The<sp/>ranges<sp/>array<sp/>is<sp/>filled<sp/>with<sp/>the<sp/>distance<sp/>of<sp/>the<sp/>obstacles<sp/>in<sp/>the<sp/>`180°`<sp/>field<sp/>of<sp/>view<sp/>of<sp/>the<sp/>robot.<sp/>It<sp/>is<sp/>possible<sp/>to<sp/>divide<sp/>the<sp/>array<sp/>in<sp/>three<sp/>parts<sp/>(robot&apos;s<sp/>left<sp/>right<sp/>and<sp/>front)<sp/>and<sp/>check<sp/>the<sp/>closest<sp/>obstacle<sp/>in<sp/>each<sp/>section,<sp/>then<sp/>if<sp/>the<sp/>robot<sp/>will<sp/>be<sp/>close<sp/>to<sp/>an<sp/>obstacle<sp/>it<sp/>will<sp/>be<sp/>properly<sp/>rotated.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Nodes<sp/>struscture</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode03.jpg&quot;<sp/>width=&quot;500&quot;<sp/>height=&quot;300&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Video</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>result<sp/>of<sp/>the<sp/>**_third_**<sp/>task<sp/>is<sp/>shown<sp/>as<sp/>the<sp/>following<sp/>video:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">https://user-images.githubusercontent.com/32397445/182872987-ba6ce54d-a143-4cc3-a866-5fc8f35cb515.mp4</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Pseudo<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline><highlight class="normal"><sp/>##<sp/>control<sp/>of<sp/>the<sp/>robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/>```<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/>listen<sp/>for<sp/>UI<sp/>node&apos;s<sp/>commands</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>if<sp/>autonomous<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>receive<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>start<sp/>driving<sp/>action<sp/>with<sp/>coordinates</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>manual<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>redirect<sp/>teleop_twist_keyboard<sp/>node<sp/>to<sp/>cmd_vel<sp/>topic</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>elseif<sp/>assisted<sp/>drive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>run<sp/>collision<sp/>avoidance<sp/>on<sp/>teleop_twist_keyboard&apos;s<sp/>commands</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>send<sp/>filtered<sp/>commands<sp/>to<sp/>cmd_vel</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>send<sp/>info<sp/>to<sp/>Interface<sp/>node</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Coclusion<sp/>and<sp/>possible<sp/>improvments</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">All<sp/>proposed<sp/>algorithms<sp/>are<sp/>executed<sp/>correctly<sp/>and<sp/>the<sp/>robot<sp/>completed<sp/>tasks<sp/>as<sp/>well.<sp/>Results<sp/>are<sp/>satisfying,<sp/>however,<sp/>some<sp/>improvements<sp/>can<sp/>be<sp/>achieved.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>reaching<sp/>a<sp/>desired<sp/>point<sp/>seems<sp/>taking<sp/>some<sp/>delays,<sp/>so,<sp/>this<sp/>could<sp/>be<sp/>modified<sp/>by<sp/>tuning<sp/>parameters.<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>A<sp/>queue<sp/>could<sp/>be<sp/>implemented<sp/>where<sp/>goals<sp/>are<sp/>reached<sp/>sequentially.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>When<sp/>the<sp/>map<sp/>of<sp/>the<sp/>environment<sp/>is<sp/>completed,<sp/>the<sp/>robot<sp/>is<sp/>not<sp/>able<sp/>to<sp/>understand<sp/>the<sp/>priori<sp/>points<sp/>whether<sp/>it<sp/>is<sp/>reachable<sp/>or<sp/>not,<sp/>which<sp/>could<sp/>be<sp/>improved<sp/>in<sp/>further<sp/>developments.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,171 @@
+\hypertarget{_manual___obs_av_8cpp}{}\doxysection{src/\+Manual\+\_\+\+Obs\+Av.cpp File Reference}
+\label{_manual___obs_av_8cpp}\index{src/Manual\_ObsAv.cpp@{src/Manual\_ObsAv.cpp}}
+
+
+Subscribes to /scan to detect obstacles and publishes to /cmd\+\_\+vel to control the robot\textquotesingle{}s velocity.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Laser\+Scan.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+Include dependency graph for Manual\+\_\+\+Obs\+Av.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_manual___obs_av_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_manual___obs_av_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}{getch}} (void)
+\begin{DoxyCompactList}\small\item\em Get non-\/blocking keyboard input. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_manual___obs_av_8cpp_a8a98eed12f7274738a5ee23ee3ae47fc}{Distance}} (float obs\+\_\+dist\mbox{[}$\,$\mbox{]}, int val\+\_\+min, int val\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Find the minimum value in a fixed range of an array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_manual___obs_av_8cpp_ac49fafbc5f138914847f7d2e562ce406}{check\+\_\+walls}} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Check the closest obstacle and decide what to do. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_manual___obs_av_8cpp_a4227105bb03c672faac7dea0c3a781e9}{choose\+\_\+input}} (char input)
+\begin{DoxyCompactList}\small\item\em Associate the input from the keyboard with the correct command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_manual___obs_av_8cpp_a7f7d866eccdabe51bb16818a792618b1}{get\+\_\+input}} ()
+\begin{DoxyCompactList}\small\item\em Display the menu and compute the velocity based on the input taken from the keyboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_manual___obs_av_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}\label{_manual___obs_av_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}} 
+ros\+::\+Publisher \mbox{\hyperlink{_manual___obs_av_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}{publisher}}
+\begin{DoxyCompactList}\small\item\em Global publisher. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_accacf4e9263030d70ed79f8516c0eac5}\label{_manual___obs_av_8cpp_accacf4e9263030d70ed79f8516c0eac5}} 
+double \mbox{\hyperlink{_manual___obs_av_8cpp_accacf4e9263030d70ed79f8516c0eac5}{velocity}} = 0.\+2
+\begin{DoxyCompactList}\small\item\em Global variable for linear velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}\label{_manual___obs_av_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}} 
+double \mbox{\hyperlink{_manual___obs_av_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}{turn\+\_\+velocity}} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Global variable for turn velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_a5bcd692957aace1a21bfc205c67ec998}\label{_manual___obs_av_8cpp_a5bcd692957aace1a21bfc205c67ec998}} 
+int \mbox{\hyperlink{_manual___obs_av_8cpp_a5bcd692957aace1a21bfc205c67ec998}{linear}} = 0
+\begin{DoxyCompactList}\small\item\em Global variable for linear direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}\label{_manual___obs_av_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}} 
+int \mbox{\hyperlink{_manual___obs_av_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}{angular}} = 0
+\begin{DoxyCompactList}\small\item\em Global variable for angular direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_aa78c78a33ff8aacecd1105f94444acd3}\label{_manual___obs_av_8cpp_aa78c78a33ff8aacecd1105f94444acd3}} 
+double \mbox{\hyperlink{_manual___obs_av_8cpp_aa78c78a33ff8aacecd1105f94444acd3}{th}} = 1
+\begin{DoxyCompactList}\small\item\em Global threshold for wall distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual___obs_av_8cpp_af113e9b4ca3af68972dfd3df47898c83}\label{_manual___obs_av_8cpp_af113e9b4ca3af68972dfd3df47898c83}} 
+geometry\+\_\+msgs\+::\+Twist \mbox{\hyperlink{_manual___obs_av_8cpp_af113e9b4ca3af68972dfd3df47898c83}{vel}}
+\begin{DoxyCompactList}\small\item\em Global overall velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subscribes to /scan to detect obstacles and publishes to /cmd\+\_\+vel to control the robot\textquotesingle{}s velocity. 
+
+This node allows the user to drive the robot in the environment using the keyboard, while providing automatic obstacle avoidance. It reuses part of the code from the Keyboard\+Drive node for driving functionality. \begin{DoxyAuthor}{Author}
+Danial Sabzevari (\href{mailto:s5217544@studenti.unige.it}{\texttt{ s5217544@studenti.\+unige.\+it}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/06/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_manual___obs_av_8cpp_ac49fafbc5f138914847f7d2e562ce406}\label{_manual___obs_av_8cpp_ac49fafbc5f138914847f7d2e562ce406}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!check\_walls@{check\_walls}}
+\index{check\_walls@{check\_walls}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_walls()}{check\_walls()}}
+{\footnotesize\ttfamily void check\+\_\+walls (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Check the closest obstacle and decide what to do. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Contains the variables provided by the robot laser.\\
+\hline
+\end{DoxyParams}
+This function checks where the closest obstacle is (front, left, or right of the robot). Based on the position of the closest obstacle, it modifies the velocity of the robot accordingly. \mbox{\Hypertarget{_manual___obs_av_8cpp_a4227105bb03c672faac7dea0c3a781e9}\label{_manual___obs_av_8cpp_a4227105bb03c672faac7dea0c3a781e9}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!choose\_input@{choose\_input}}
+\index{choose\_input@{choose\_input}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{choose\_input()}{choose\_input()}}
+{\footnotesize\ttfamily void choose\+\_\+input (\begin{DoxyParamCaption}\item[{char}]{input }\end{DoxyParamCaption})}
+
+
+
+Associate the input from the keyboard with the correct command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input value to associate with the correct command.\\
+\hline
+\end{DoxyParams}
+This function modifies the velocity and turn velocity based on the input value. \mbox{\Hypertarget{_manual___obs_av_8cpp_a8a98eed12f7274738a5ee23ee3ae47fc}\label{_manual___obs_av_8cpp_a8a98eed12f7274738a5ee23ee3ae47fc}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!Distance@{Distance}}
+\index{Distance@{Distance}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily float Distance (\begin{DoxyParamCaption}\item[{float}]{obs\+\_\+dist\mbox{[}$\,$\mbox{]},  }\item[{int}]{val\+\_\+min,  }\item[{int}]{val\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Find the minimum value in a fixed range of an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obs\+\_\+dist\mbox{[}$\,$\mbox{]}} & The array. \\
+\hline
+{\em val\+\_\+min} & The index from which to start the search. \\
+\hline
+{\em val\+\_\+max} & The index at which to stop the search. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The minimum value in the range.
+\end{DoxyReturn}
+This function compares the elements of the selected range and returns the minimum value. \mbox{\Hypertarget{_manual___obs_av_8cpp_a7f7d866eccdabe51bb16818a792618b1}\label{_manual___obs_av_8cpp_a7f7d866eccdabe51bb16818a792618b1}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily void get\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Display the menu and compute the velocity based on the input taken from the keyboard. 
+
+This function displays the menu with the available commands for modifying the direction and velocity. It calls the choose\+\_\+input function to compute the new velocity based on the user\textquotesingle{}s input and assigns the computed velocity to the vel variable. \mbox{\Hypertarget{_manual___obs_av_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}\label{_manual___obs_av_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!getch@{getch}}
+\index{getch@{getch}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{getch()}{getch()}}
+{\footnotesize\ttfamily int getch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get non-\/blocking keyboard input. 
+
+\begin{DoxyReturn}{Returns}
+The input character from the keyboard.
+\end{DoxyReturn}
+This function is used to avoid pressing Enter after giving an input from the keyboard, as part of teleop\+\_\+twist\+\_\+keyboard.\+cpp. \mbox{\Hypertarget{_manual___obs_av_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{_manual___obs_av_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}!main@{main}}
+\index{main@{main}!Manual\_ObsAv.cpp@{Manual\_ObsAv.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+The main function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & An integer argument count of the command line arguments. \\
+\hline
+{\em argv} & An argument vector of the command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer 0 upon success.
+\end{DoxyReturn}
+The main function initializes the R\+OS node, subscribes to /scan topic, and publishes to /cmd\+\_\+vel topic. It enters a while loop to continuously get user input for controlling the robot. 

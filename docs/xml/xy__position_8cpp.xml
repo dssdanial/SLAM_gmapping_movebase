@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="xy__position_8cpp" kind="file" language="C++">
+    <compoundname>xy_position.cpp</compoundname>
+    <includes local="yes">ros/ros.h</includes>
+    <includes local="yes">move_base_msgs/MoveBaseActionGoal.h</includes>
+    <includes local="yes">actionlib_msgs/GoalStatusArray.h</includes>
+    <includes local="yes">actionlib_msgs/GoalID.h</includes>
+    <includes local="no">time.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>move_base_msgs/MoveBaseActionGoal.h</label>
+      </node>
+      <node id="1">
+        <label>src/xy_position.cpp</label>
+        <link refid="xy__position_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>actionlib_msgs/GoalID.h</label>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="6">
+        <label>time.h</label>
+      </node>
+      <node id="4">
+        <label>actionlib_msgs/GoalStatusArray.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="xy__position_8cpp_1ae057aae7fbba2a4cef62321020305295" prot="public" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pub_goal</definition>
+        <argsstring></argsstring>
+        <name>pub_goal</name>
+        <briefdescription>
+<para>Global publisher for the goal position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="20" column="16" bodyfile="src/xy_position.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1a33cbe548b1e0f6b08bbe754f53af458c" prot="public" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher pub_cancel</definition>
+        <argsstring></argsstring>
+        <name>pub_cancel</name>
+        <briefdescription>
+<para>Global publisher to cancel the goal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="21" column="16" bodyfile="src/xy_position.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1a22ff3f8747e9f68ad42bddad8e86e872" prot="public" static="no" mutable="no">
+        <type>ros::Subscriber</type>
+        <definition>ros::Subscriber subscriber</definition>
+        <argsstring></argsstring>
+        <name>subscriber</name>
+        <briefdescription>
+<para>Global subscriber for robot status. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="22" column="17" bodyfile="src/xy_position.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1ad0da36b2558901e21e7a30f6c227a45e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="24" column="7" bodyfile="src/xy_position.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>Global variables for goal coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="24" column="9" bodyfile="src/xy_position.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1a7441ef0865bcb3db9b8064dd7375c1ea" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>Global variable for goal id. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="26" column="5" bodyfile="src/xy_position.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" prot="public" static="no" mutable="no">
+        <type>move_base_msgs::MoveBaseActionGoal</type>
+        <definition>move_base_msgs::MoveBaseActionGoal goal</definition>
+        <argsstring></argsstring>
+        <name>goal</name>
+        <briefdescription>
+<para>Global variable for overall goal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="28" column="36" bodyfile="src/xy_position.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flag_for_goal</definition>
+        <argsstring></argsstring>
+        <name>flag_for_goal</name>
+        <briefdescription>
+<para>Global flag to detect the user input during goal navigation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="30" column="5" bodyfile="src/xy_position.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="xy__position_8cpp_1a979c1eec3a680dc9742ca8f3a498bf5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_coordinates</definition>
+        <argsstring>()</argsstring>
+        <name>get_coordinates</name>
+        <briefdescription>
+<para>Get goal coordinates from user. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prompts the user for the x and y coordinates of the desired goal. It then constructs a goal message with these coordinates and a randomly generated id, and publishes this message. The goal status is tracked throughout the execution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="128" column="6" bodyfile="src/xy_position.cpp" bodystart="128" bodyend="204" declfile="src/xy_position.cpp" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="xy__position_8cpp_1ab859e879694e6127351224cfac874342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Handler</definition>
+        <argsstring>(const actionlib_msgs::GoalStatusArray::ConstPtr &amp;msg)</argsstring>
+        <name>Handler</name>
+        <param>
+          <type>const actionlib_msgs::GoalStatusArray::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Handle the robot&apos;s goal status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ConstPtr to GoalStatusArray message.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function handles the status of the goal. It checks if the goal has been reached or not and updates the user accordingly. If the goal is not reached, it prompts the user to set a new goal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="215" column="6" bodyfile="src/xy_position.cpp" bodystart="215" bodyend="245" declfile="src/xy_position.cpp" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="xy__position_8cpp_1acfecdcc2c8ebd81159619cb8bd8d180e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void detect_input</definition>
+        <argsstring>()</argsstring>
+        <name>detect_input</name>
+        <briefdescription>
+<para>Get user input to determine course of action. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function detects user input to determine if the user wants to set a new goal, stop the navigation towards the current goal, or exit the program. It interacts with the <ref refid="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" kindref="member">delete_goal()</ref> function as necessary based on user input. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="47" column="6" bodyfile="src/xy_position.cpp" bodystart="47" bodyend="79" declfile="src/xy_position.cpp" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void delete_goal</definition>
+        <argsstring>(int must_continue)</argsstring>
+        <name>delete_goal</name>
+        <param>
+          <type>int</type>
+          <declname>must_continue</declname>
+        </param>
+        <briefdescription>
+<para>Delete the current goal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>must_continue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Determines if navigation should continue after deletion.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This function cancels the current goal based on user input and publishes a cancellation message. Depending on the must_continue parameter, it either prompts the user to set a new goal, or shuts down the program. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="90" column="6" bodyfile="src/xy_position.cpp" bodystart="90" bodyend="117" declfile="src/xy_position.cpp" declline="37" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="xy__position_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>Main function of the program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integer argument count of the command line arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An argument vector of the command line arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An integer 0 upon exit success.</para>
+</simplesect>
+This function initializes the ROS node, sets up the necessary publishers and subscribers, and prompts the user to set the first goal. It then spins the node and handles user input and goal statuses as they come in. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/xy_position.cpp" line="258" column="5" bodyfile="src/xy_position.cpp" bodystart="258" bodyend="276"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Navigation node for driving a robot to a specified goal. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the core code for a ROS node that drives a robot to a specified goal location. The goal location is provided by the user via the console. This node subscribes to the /move_base/status topic to get the status of the robot, and publishes to the /move_base/goal and /move_base/cancel topics to set and cancel the goal position respectively. <simplesect kind="author"><para>Danial Sabzevari (<ulink url="mailto:s5217544@studenti.unige.it">s5217544@studenti.unige.it</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>01/06/2023 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#include<sp/>&quot;ros/ros.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;move_base_msgs/MoveBaseActionGoal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;actionlib_msgs/GoalStatusArray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;actionlib_msgs/GoalID.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Global<sp/>variables<sp/>definition</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">ros::Publisher<sp/><ref refid="xy__position_8cpp_1ae057aae7fbba2a4cef62321020305295" kindref="member">pub_goal</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">ros::Publisher<sp/><ref refid="xy__position_8cpp_1a33cbe548b1e0f6b08bbe754f53af458c" kindref="member">pub_cancel</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">ros::Subscriber<sp/><ref refid="xy__position_8cpp_1a22ff3f8747e9f68ad42bddad8e86e872" kindref="member">subscriber</ref>;<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/><ref refid="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>;<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1a7441ef0865bcb3db9b8064dd7375c1ea" kindref="member">id</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">move_base_msgs::MoveBaseActionGoal<sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>defining<sp/>functions<sp/>prototypes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1a979c1eec3a680dc9742ca8f3a498bf5f" kindref="member">get_coordinates</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1ab859e879694e6127351224cfac874342" kindref="member">Handler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>actionlib_msgs::GoalStatusArray::ConstPtr<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1acfecdcc2c8ebd81159619cb8bd8d180e" kindref="member">detect_input</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" kindref="member">delete_goal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>must_continue);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1acfecdcc2c8ebd81159619cb8bd8d180e" kindref="member">detect_input</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//get<sp/>an<sp/>user<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>input_ch<sp/>=<sp/>getchar();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>there<sp/>is<sp/>a<sp/>goal<sp/>in<sp/>progress<sp/>then<sp/>user<sp/>is<sp/>allowed<sp/>to<sp/>cancel<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;q&apos;</highlight><highlight class="normal"><sp/>||<sp/>input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;Q&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>the<sp/>function<sp/>delete_goal<sp/>with<sp/>argument<sp/>1<sp/>to<sp/>cancel<sp/>the<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" kindref="member">delete_goal</ref>(1);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal"><sp/>||input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;S&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref>)<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>the<sp/>function<sp/>delete_goal<sp/>with<sp/>argument<sp/>0<sp/>to<sp/>quit<sp/>the<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" kindref="member">delete_goal</ref>(0);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ros::shutdown();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>there<sp/>aren&apos;t<sp/>goal<sp/>in<sp/>progress<sp/>then<sp/>user<sp/>is<sp/>allowed<sp/>to<sp/>choose<sp/>wheter<sp/>to<sp/>continue<sp/>or<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;y&apos;</highlight><highlight class="normal"><sp/>||<sp/>input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;Y&apos;</highlight><highlight class="normal"><sp/>||<sp/>input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal"><sp/>||<sp/>input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>!<ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>user<sp/>wants<sp/>to<sp/>set<sp/>a<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;y&apos;</highlight><highlight class="normal"><sp/>||<sp/>input_ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;Y&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>the<sp/>function<sp/>get_coordinates()<sp/>to<sp/>set<sp/>the<sp/>goal<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a979c1eec3a680dc9742ca8f3a498bf5f" kindref="member">get_coordinates</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>user<sp/>doesn&apos;t<sp/>want<sp/>to<sp/>set<sp/>a<sp/>goal<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1ac202af5a188c6fd910fa5a0459f49a68" kindref="member">delete_goal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>must_continue)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//build<sp/>cancel<sp/>message<sp/>with<sp/>goal<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>actionlib_msgs::GoalID<sp/>msg_cancel;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>msg_cancel.id<sp/>=<sp/>std::to_string(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a33cbe548b1e0f6b08bbe754f53af458c" kindref="member">pub_cancel</ref>.publish(msg_cancel);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a22ff3f8747e9f68ad42bddad8e86e872" kindref="member">subscriber</ref>.shutdown();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>flag<sp/>as<sp/>goal<sp/>in<sp/>no<sp/>more<sp/>in<sp/>progress</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>the<sp/>program<sp/>should<sp/>stop<sp/>then<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!must_continue)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//else<sp/>clear<sp/>and<sp/>ask<sp/>user<sp/>what<sp/>he<sp/>wants<sp/>to<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;Goal<sp/>is<sp/>cancelled.<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Do<sp/>you<sp/>want<sp/>to<sp/>set<sp/>another<sp/>goal?<sp/>(y/n)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//detect<sp/>user<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1acfecdcc2c8ebd81159619cb8bd8d180e" kindref="member">detect_input</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1a979c1eec3a680dc9742ca8f3a498bf5f" kindref="member">get_coordinates</ref>()</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//wait<sp/>until<sp/>two<sp/>floats<sp/>are<sp/>inserted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Automatic<sp/>navigation<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Insert<sp/>x<sp/>coordinate:<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>x;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cin.good()<sp/>returns<sp/>0<sp/>if<sp/>the<sp/>stream<sp/>has<sp/>encountered<sp/>problems.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!std::cin.good())</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cin.clear()<sp/>to<sp/>clear<sp/>the<sp/>error<sp/>flag<sp/>on<sp/>cin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cin.ignore()<sp/>to<sp/>ignore<sp/>the<sp/>previously<sp/>given<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Automatic<sp/>navigation<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Insert<sp/>x<sp/>coordinate:<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/>x;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Automatic<sp/>navigation<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Insert<sp/>y<sp/>coordinate:<sp/>\n\n&quot;</highlight><highlight class="normal">;;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/><ref refid="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!std::cin.good())</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.clear();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(),<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Automatic<sp/>navigation<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Insert<sp/>y<sp/>coordinate:<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cin<sp/>&gt;&gt;<sp/><ref refid="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>build<sp/>goal<sp/>message<sp/>using<sp/>the<sp/>goal<sp/>coordinates<sp/>given<sp/>by<sp/>keyboard<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>using<sp/>a<sp/>random<sp/>generated<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//generation<sp/>of<sp/>random<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>rand();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>.goal.target_pose.pose.position.x<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>.goal.target_pose.pose.position.y<sp/>=<sp/><ref refid="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>.goal.target_pose.pose.orientation.w<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>.goal.target_pose.header.frame_id<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;map&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to_string()<sp/>convert<sp/>the<sp/>id<sp/>into<sp/>string<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>.goal_id.id<sp/>=<sp/>std::to_string(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//publish<sp/>goal<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1ae057aae7fbba2a4cef62321020305295" kindref="member">pub_goal</ref>.publish(<ref refid="xy__position_8cpp_1a277a26d89f87198b128da14ee46d39a7" kindref="member">goal</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>flag<sp/>for<sp/>a<sp/>new<sp/>goal<sp/>in<sp/>progress</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//update<sp/>the<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\nThe<sp/>goal<sp/>has<sp/>been<sp/>set<sp/>to\tx:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\ty:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="xy__position_8cpp_1aa4f0d3eebc3c443f9be81bf48561a217" kindref="member">y</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Press<sp/>q<sp/>and<sp/>then<sp/>press<sp/>enter<sp/>to<sp/>cancel<sp/>the<sp/>goal,<sp/>press<sp/>s<sp/>to<sp/>quit<sp/>the<sp/>exexution\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//subscribe<sp/>to<sp/>goal<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>node_handle;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;/move_base/status&quot;<sp/>provides<sp/>status<sp/>information<sp/>on<sp/>the<sp/>goal<sp/>that<sp/>are<sp/>sent<sp/>to<sp/>the<sp/>move_base<sp/>action.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a22ff3f8747e9f68ad42bddad8e86e872" kindref="member">subscriber</ref><sp/>=<sp/>node_handle.subscribe(</highlight><highlight class="stringliteral">&quot;/move_base/status&quot;</highlight><highlight class="normal">,<sp/>500,<sp/><ref refid="xy__position_8cpp_1ab859e879694e6127351224cfac874342" kindref="member">Handler</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//start<sp/>detecting<sp/>inputs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::AsyncSpinner<sp/>spinner(4);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>spinner.start();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1acfecdcc2c8ebd81159619cb8bd8d180e" kindref="member">detect_input</ref>();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>spinner.stop();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1ab859e879694e6127351224cfac874342" kindref="member">Handler</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>actionlib_msgs::GoalStatusArray::ConstPtr<sp/>&amp;msg)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//status<sp/>of<sp/>goal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//to<sp/>read<sp/>only<sp/>goals<sp/>with<sp/>correct<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg-&gt;status_list[0].goal_id.id<sp/>==<sp/>std::to_string(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status<sp/>=<sp/>msg-&gt;status_list[0].status;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>!=<sp/>3<sp/>&amp;&amp;<sp/>status<sp/>!=<sp/>4)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a22ff3f8747e9f68ad42bddad8e86e872" kindref="member">subscriber</ref>.shutdown();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a910adc6e2561e7bb6644c09a3f851977" kindref="member">flag_for_goal</ref>=<sp/>0;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;clear&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Robot<sp/>automatic<sp/>navigation<sp/>\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status<sp/>==<sp/>3)<sp/></highlight><highlight class="comment">//status<sp/>3<sp/>corresponds<sp/>to<sp/>SUCCEDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Goal<sp/>reached!\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>else<sp/>the<sp/>goal<sp/>cannot<sp/>be<sp/>reached</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>goal<sp/>can<sp/>not<sp/>be<sp/>reached.\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\nDo<sp/>you<sp/>want<sp/>to<sp/>set<sp/>another<sp/>goal?<sp/>(y/n)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="xy__position_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>srand(time(NULL));</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;xy_position&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>node_handle;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>goal<sp/>position<sp/>is<sp/>published<sp/>in<sp/>the<sp/>&quot;/move_base/goal&quot;<sp/>topic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1ae057aae7fbba2a4cef62321020305295" kindref="member">pub_goal</ref><sp/>=<sp/>node_handle.advertise&lt;move_base_msgs::MoveBaseActionGoal&gt;(</highlight><highlight class="stringliteral">&quot;/move_base/goal&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>message<sp/>to<sp/>cancel<sp/>the<sp/>goal<sp/>is<sp/>published<sp/>on<sp/>the<sp/>&quot;/move_base/cancel&quot;<sp/>topic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a33cbe548b1e0f6b08bbe754f53af458c" kindref="member">pub_cancel</ref><sp/>=<sp/>node_handle.advertise&lt;actionlib_msgs::GoalID&gt;(</highlight><highlight class="stringliteral">&quot;/move_base/cancel&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//get<sp/>goal<sp/>coordinates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xy__position_8cpp_1a979c1eec3a680dc9742ca8f3a498bf5f" kindref="member">get_coordinates</ref>();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spin();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/xy_position.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+\hypertarget{_manual__drive_8cpp}{}\doxysection{src/\+Manual\+\_\+drive.cpp File Reference}
+\label{_manual__drive_8cpp}\index{src/Manual\_drive.cpp@{src/Manual\_drive.cpp}}
+
+
+Allows manual control of the robot using keyboard input.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/\+Laser\+Scan.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+Include dependency graph for Manual\+\_\+drive.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_manual__drive_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_manual__drive_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}{getch}} (void)
+\begin{DoxyCompactList}\small\item\em Provides non-\/blocking keyboard input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_manual__drive_8cpp_a4227105bb03c672faac7dea0c3a781e9}{choose\+\_\+input}} (char input)
+\begin{DoxyCompactList}\small\item\em Maps keyboard input to robot commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_manual__drive_8cpp_a7f7d866eccdabe51bb16818a792618b1}{get\+\_\+input}} ()
+\begin{DoxyCompactList}\small\item\em Captures keyboard input and computes velocity commands. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_manual__drive_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}\label{_manual__drive_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}} 
+ros\+::\+Publisher \mbox{\hyperlink{_manual__drive_8cpp_adde9f51ddf0fb5c82c57b4075b6e9400}{publisher}}
+\begin{DoxyCompactList}\small\item\em Global R\+OS publisher for /cmd\+\_\+vel topic. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_accacf4e9263030d70ed79f8516c0eac5}\label{_manual__drive_8cpp_accacf4e9263030d70ed79f8516c0eac5}} 
+double \mbox{\hyperlink{_manual__drive_8cpp_accacf4e9263030d70ed79f8516c0eac5}{velocity}} = 0.\+2
+\begin{DoxyCompactList}\small\item\em Default linear velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}\label{_manual__drive_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}} 
+double \mbox{\hyperlink{_manual__drive_8cpp_ad0f8b5cad9317f1389ce5ab84b9a8b28}{turn\+\_\+velocity}} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Default angular velocity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_a5bcd692957aace1a21bfc205c67ec998}\label{_manual__drive_8cpp_a5bcd692957aace1a21bfc205c67ec998}} 
+int \mbox{\hyperlink{_manual__drive_8cpp_a5bcd692957aace1a21bfc205c67ec998}{linear}} = 0
+\begin{DoxyCompactList}\small\item\em Linear direction, modifiable via keyboard input. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}\label{_manual__drive_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}} 
+int \mbox{\hyperlink{_manual__drive_8cpp_a1ca7e9bd07214a8b29d24ef9b87b5a4f}{angular}} =0
+\begin{DoxyCompactList}\small\item\em Angular direction, modifiable via keyboard input. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_manual__drive_8cpp_af113e9b4ca3af68972dfd3df47898c83}\label{_manual__drive_8cpp_af113e9b4ca3af68972dfd3df47898c83}} 
+geometry\+\_\+msgs\+::\+Twist \mbox{\hyperlink{_manual__drive_8cpp_af113e9b4ca3af68972dfd3df47898c83}{vel}}
+\begin{DoxyCompactList}\small\item\em Twist message for publishing robot velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows manual control of the robot using keyboard input. 
+
+The node enables the user to move the robot in the environment using the keyboard. The velocity and direction of the robot are managed by four variables, two for velocity values (linear and angular) and two for direction (linear and angular). \begin{DoxyAuthor}{Author}
+Danial Sabzevari (\href{mailto:s5217544@studenti.unige.it}{\texttt{ s5217544@studenti.\+unige.\+it}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/06/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_manual__drive_8cpp_a4227105bb03c672faac7dea0c3a781e9}\label{_manual__drive_8cpp_a4227105bb03c672faac7dea0c3a781e9}} 
+\index{Manual\_drive.cpp@{Manual\_drive.cpp}!choose\_input@{choose\_input}}
+\index{choose\_input@{choose\_input}!Manual\_drive.cpp@{Manual\_drive.cpp}}
+\doxysubsubsection{\texorpdfstring{choose\_input()}{choose\_input()}}
+{\footnotesize\ttfamily void choose\+\_\+input (\begin{DoxyParamCaption}\item[{char}]{input }\end{DoxyParamCaption})}
+
+
+
+Maps keyboard input to robot commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Character received from keyboard input\\
+\hline
+\end{DoxyParams}
+This function takes keyboard input and, using a switch statement, adjusts the robot\textquotesingle{}s velocity and direction variables accordingly. \mbox{\Hypertarget{_manual__drive_8cpp_a7f7d866eccdabe51bb16818a792618b1}\label{_manual__drive_8cpp_a7f7d866eccdabe51bb16818a792618b1}} 
+\index{Manual\_drive.cpp@{Manual\_drive.cpp}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!Manual\_drive.cpp@{Manual\_drive.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily void get\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Captures keyboard input and computes velocity commands. 
+
+This function prints the user instruction menu for keyboard commands, captures user keyboard input, computes the new velocity and direction commands, and then publishes a Twist message with these commands to the /cmd\+\_\+vel topic. \mbox{\Hypertarget{_manual__drive_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}\label{_manual__drive_8cpp_af5978fab9fa6dd4ced1c3a8ab1251f7b}} 
+\index{Manual\_drive.cpp@{Manual\_drive.cpp}!getch@{getch}}
+\index{getch@{getch}!Manual\_drive.cpp@{Manual\_drive.cpp}}
+\doxysubsubsection{\texorpdfstring{getch()}{getch()}}
+{\footnotesize\ttfamily int getch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Provides non-\/blocking keyboard input. 
+
+\begin{DoxyReturn}{Returns}
+Integer corresponding to A\+S\+C\+II value of keyboard input
+\end{DoxyReturn}
+This function captures user input from the keyboard without requiring Enter to be pressed. It is a modification of the function found in the teleop\+\_\+twist\+\_\+keyboard.\+cpp package. \mbox{\Hypertarget{_manual__drive_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{_manual__drive_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Manual\_drive.cpp@{Manual\_drive.cpp}!main@{main}}
+\index{main@{main}!Manual\_drive.cpp@{Manual\_drive.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & An integer argument count of the command line arguments. \\
+\hline
+{\em argv} & An argument vector of the command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer 0 upon exit success.
+\end{DoxyReturn}
+This function initializes the R\+OS node, advertises the /cmd\+\_\+vel topic, and then enters a loop where it continually captures user input and calculates and publishes new velocity commands. 
