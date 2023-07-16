@@ -1,7 +1,7 @@
 # RT1 final project: SLAM_gmapping_movebase
 ================================
 
-A software architecture for the control of the robot in the environment. The software relys on the move_base and gmapping packages for localizing the robot and plan the motion.
+A software architecture for the control of the robot in the environment. The software relies on the move_base and gmapping packages for localizing the robot and planning the motion.
 
 In this project, the software architecture should be able to get the user request, and let the robot execute one of the following behaviors (depending on the user’s input):
 
@@ -60,7 +60,7 @@ Introduction
 
 Interface Node
 ----------------------
-The purpose of this node is showing an interface in which the user can choose different modes, reset the simulation or quit the execution of the program. When an input is given, the node runs the correct command to launch the related node. 
+The purpose of this node is to show an interface in which the user can choose different modes, reset the simulation or quit the execution of the program. When an input is given, the node runs the correct command to launch the related node. 
 
 The interface is simply designed as a list of commands as follows:
 
@@ -71,16 +71,16 @@ The interface is simply designed as a list of commands as follows:
 
 (I) Autonomous XY-Position Node
 ----------------------
-Once a x-y position receieved by user, this node drives the robot to the desired position in the environment. First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated and published in the `/move_base/goal` topic.
-Every goal is tracked by the node with its `id`, that is randomly generated inside the node itself.
+Once a x-y position received by the user, this node drives the robot to the desired position in the environment. First of all the node requires from the user the `x` and `y` position of the goal, then a message of type `move_base_msgs/MoveBaseActionGoal` is generated and published in the `/move_base/goal` topic.
+Every goal is tracked by the node with its `id`, which is randomly generated inside the node itself.
 
 
-## Nodes struscture
+## Nodes structure
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode01.jpg" width="600" height="500">
 </p>
 
-After establishing the position, the user can at any time cancel the goal (pressing the `q` key) and quit the execurtion (pressing the `s` key).
+After establishing the position, the user can at any time cancel the goal (pressing the `q` key) and quit the execution (pressing the `s` key).
 If one of the above keys is pressed, a message of type `actionlib_msgs/GoalID` is generated and then published in the `/move_base/cancel` topic to cancel the goal.
 
 
@@ -109,7 +109,7 @@ An interface has been considered as a list of the commands to move the robot and
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/keyboard.png" width="500" height="300">
 </p>
 
-## Nodes struscture
+## Nodes structure
 
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode02.jpg" width="500" height="300">
@@ -132,7 +132,7 @@ has been re-used for this node.
 To manage obstacle avoidance the robot laser scanner is used,and the node subscribes from the `/scan` topic. This topic provide a `ranges array` composed of 720 elements. The ranges array is filled with the distance of the obstacles in the `180°` field of view of the robot. It is possible to divide the array in three parts (robot's left right and front) and check the closest obstacle in each section, then if the robot will be close to an obstacle it will be properly rotated. 
 
 
-## Nodes struscture
+## Nodes structure
 
 <p align="center">
 <img src="https://github.com/dssdanial/SLAM_gmapping_movebase/blob/main/images/mode03.jpg" width="500" height="300">
@@ -148,7 +148,7 @@ https://user-images.githubusercontent.com/32397445/182872987-ba6ce54d-a143-4cc3-
 
 
 
-Pseudo code
+Pseudocode
 ----------------------
  ## control of the robot
  ``` bash
@@ -165,15 +165,19 @@ Pseudo code
     run collision avoidance on teleop_twist_keyboard's commands
     send filtered commands to cmd_vel
 
-  send info to Interface node
+  send info to the Interface node
 ```
+Documentation
+----------------------
+In order to generate the documentation for this project, Doxygen has been used. 
 
+You can view the [Doxygen](https://dssdanial.github.io/SLAM_gmapping_movebase/) documentation by clicking here. 
 
-Coclusion and possible improvments
+Conclusion and possible improvements
 ----------------------
 
 All proposed algorithms are executed correctly and the robot completed tasks as well. Results are satisfying, however, some improvements can be achieved.
-* reaching a desired point seems taking some delays, so, this could be modified by tuning parameters. 
+* reaching a desired point seems to take some delays, so, this could be modified by tuning parameters. 
 * A queue could be implemented where goals are reached sequentially.
 * When the map of the environment is completed, the robot is not able to understand the priori points whether it is reachable or not, which could be improved in further developments.
 
