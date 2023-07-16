@@ -171,7 +171,7 @@ Documentation
 ----------------------
 In order to generate the documentation for this project, Doxygen has been used. 
 
-You can view the [Doxygen](https://dssdanial.github.io/SLAM_gmapping_movebase/) documentation by clicking here. 
+You can view the Doxygen documentation by clicking [here](https://dssdanial.github.io/SLAM_gmapping_movebase/). 
 
 Conclusion and possible improvements
 ----------------------
