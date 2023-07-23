@@ -43,7 +43,7 @@ $ sudo apt-get install ros-<your_ros_distro>-navigation
 $ sudo apt-get install ros-<your_ros_distro>-teleop-twist-keyboard
 ```
 
-After installing the required packages, it is time to run the simulation. Concequently, a launch file is porvided here as follows.
+After installing the required packages, it is time to run the simulation. Consequently, a launch file is provided here as follows.
 ``` bash
 $ roslaunch RTassignment3 main.launch
 ```
@@ -53,19 +53,22 @@ $ roslaunch RTassignment3 main.launch
 Introduction
 ----------------------
 
-* Regarding the first goal, the `move_base` pakage requires goal to be sent to the topic `move_base/goal`, by sending a message of type `move_base_msgs/MoveBaseActionGoal`.
-* Regarding the goals 2) and 3), it should rely on the `teleop_twist_keyboard`, however, in case 3), the cmd_vel may need to be corrected when the user is going to crash into obstacles. Carefully consider the architecture of the system.
-* Concerning the goal 3), the robot should not go forward if there is an obstacle in the front, also should not turn left/right if there are obstacles on the left/right.
+* Regarding the first goal, the `move_base` package requires the goal to be sent to the topic `move_base/goal`, by sending a message of type `move_base_msgs/MoveBaseActionGoal`.
+* Regarding goals 2) and 3), it should rely on the `teleop_twist_keyboard`, however, in case 3), the cmd_vel may need to be corrected when the user is going to crash into obstacles. Carefully consider the architecture of the system.
+* Concerning goal 3), the robot should not go forward if there is an obstacle in the front, also should not turn left/right if there are obstacles on the left/right.
 
 
 ## Interface Node
 
+<td><img src="https://github.com/dssdanial/SLAM_gmapping_movebase/assets/32397445/19f9312d-369c-44b1-95f3-fad03c22ef0c" width=270 height=480></td>
+<td><img src="https://github.com/dssdanial/SLAM_gmapping_movebase/assets/32397445/c098e8bd-2007-431d-9b95-b22202acbaa9" width=700 height=380></td>
 
 
 ## Documentation
 **----------------------**
 
 In order to generate the documentation for this project, Doxygen has been used.
+![screen](https://github.com/dssdanial/SLAM_gmapping_movebase/assets/32397445/5fd08cfc-f5ba-4e2e-85d5-7e22c0aedb07)
 
 
 You can view the Doxygen documentation by clicking [here](https://dssdanial.github.io/SLAM_gmapping_movebase/). 
