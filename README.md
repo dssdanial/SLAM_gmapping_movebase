@@ -73,13 +73,10 @@ In order to generate the documentation for this project, Doxygen has been used.
 
 You can view the Doxygen documentation by clicking [here](https://dssdanial.github.io/SLAM_gmapping_movebase/). 
 
-Conclusion and possible improvements
-----------------------
-
-All proposed algorithms are executed correctly and the robot completed tasks as well. Results are satisfying, however, some improvements can be achieved.
-* reaching a desired point seems to take some delays, so, this could be modified by tuning parameters. 
-* A queue could be implemented where goals are reached sequentially.
-* When the map of the environment is completed, the robot is not able to understand the priori points whether it is reachable or not, which could be improved in further developments.
 
 
+## Link to Jupyter Notebook file
+Here is the link to find the codes:
+
+https://github.com/dssdanial/SLAM_gmapping_movebase/blob/Interface_JupyterROS/scripts/Interface_JupyterROS.ipynb
 
