@@ -81,3 +81,12 @@ To start it: `jupyter lab --allow-root --ip 0.0.0.0`
 `jupyter contrib nbextension install`
 
 
+
+
+## Result
+
+
+https://github.com/dssdanial/SLAM_gmapping_movebase/assets/32397445/4bce4504-4bdf-4377-bb98-f35ec32e374c
+
+
+
